@@ -67,10 +67,14 @@ public class Blackjack {
         scan.nextLine();
 
 
-  if(dealerScore < 17){
-          dealerScore+= drawRandomCard();
+while(dealerScore < 17){
 
-  }
+    int newCard = drawRandomCard();
+    dealerScore += Math.min(newCard,10);
+    System.out.println("\n Dealer gets a \n" + cardString(newCard));
+    System.out.println("Dealer's total is " + dealerScore);
+
+}
 
 
 if (dealerScore > 21) {
